@@ -9,6 +9,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="min-h-screen">
+  <!-- Floating Background Elements -->
+    <div class="floating-elements">
+        <div class="floating-shape" style="top: 10%; left: 10%; width: 60px; height: 60px; animation-delay: 0s;"></div>
+        <div class="floating-shape" style="top: 20%; right: 15%; width: 80px; height: 80px; animation-delay: 1s;"></div>
+        <div class="floating-shape" style="bottom: 30%; left: 20%; width: 40px; height: 40px; animation-delay: 2s;"></div>
+        <div class="floating-shape" style="bottom: 10%; right: 25%; width: 70px; height: 70px; animation-delay: 3s;"></div>
+    </div>
+
     <!-- Header -->
     <header class="glass-morphism fixed top-0 left-0 right-0 z-50 pt-2 shadow-md md:rounded-b-2xl">
       <div class="container mx-auto px-6 py-4">
@@ -18,7 +26,7 @@
             <div class="w-12 h-12 bg-white bg-opacity-20 rounded-xl flex items-center justify-center">
               <span class="text-white text-2xl font-bold">🧠</span>
             </div>
-            <h1 class="text-2xl font-bold text-white">JejakBelajar</h1>
+            <h1 class="text-2xl font-bold text-black">JejakBelajar</h1>
           </div>
           <!-- Kanan: Menu (desktop) -->
           <div class="header-menu flex gap-2">
@@ -46,22 +54,22 @@
         <!-- Statistics Section -->
         <section class="mb-5">
             <div class="glass-card rounded-3xl p-8">
-                <h2 class="text-2xl font-bold text-white mb-6 text-center">📊 Ringkasan Progress</h2>
+                <h2 class="text-2xl font-bold text-black mb-6 text-center">📊 Ringkasan Progress</h2>
                 <div class="grid md:grid-cols-4 gap-6" id="statsContainer">
                     <div class="stat-card text-center p-6 rounded-2xl">
-                        <div class="text-4xl font-bold text-white mb-2" id="totalLogs">0</div>
+                        <div class="text-4xl font-bold text-black mb-2" id="totalLogs">0</div>
                         <div class="text-white/70 text-sm font-medium">Total Kegiatan</div>
                     </div>
                     <div class="stat-card text-center p-6 rounded-2xl">
-                        <div class="text-4xl font-bold text-white mb-2" id="totalHours">0</div>
+                        <div class="text-4xl font-bold text-black mb-2" id="totalHours">0</div>
                         <div class="text-white/70 text-sm font-medium">Total Jam</div>
                     </div>
                     <div class="stat-card text-center p-6 rounded-2xl">
-                        <div class="text-4xl font-bold text-white mb-2" id="completedTasks">0</div>
+                        <div class="text-4xl font-bold text-black mb-2" id="completedTasks">0</div>
                         <div class="text-white/70 text-sm font-medium">Selesai</div>
                     </div>
                     <div class="stat-card text-center p-6 rounded-2xl">
-                        <div class="text-4xl font-bold text-white mb-2" id="thisWeek">0</div>
+                        <div class="text-4xl font-bold text-black mb-2" id="thisWeek">0</div>
                         <div class="text-white/70 text-sm font-medium">Minggu Ini</div>
                     </div>
                 </div>
@@ -69,8 +77,8 @@
                 <!-- Progress Bar -->
                 <div class="mt-6">
                     <div class="flex justify-between items-center mb-2">
-                        <span class="text-white font-semibold">Progress Keseluruhan</span>
-                        <span class="text-white/70" id="progressPercent">0%</span>
+                        <span class="text-black font-semibold">Progress Keseluruhan</span>
+                        <span class="text-black/70" id="progressPercent">0%</span>
                     </div>
                     <div class="progress-bar">
                         <div class="progress-fill" id="progressFill" style="width: 0%"></div>
@@ -80,7 +88,7 @@
         </section>
 
         <!-- Filter Tabs -->
-        <div class="glass-card rounded-3xl p-6">
+        <div class="glass-morphism rounded-3xl p-6 mb-5">
             <div class="filter-tabs">
                 <div class="filter-tab active" data-filter="all">📋 Semua</div>
                 <div class="filter-tab" data-filter="pending">⏳ Belum Dimulai</div>
@@ -94,7 +102,7 @@
         <section class="mt-5">
             <div class="glass-card rounded-3xl p-8 mb-8">
                 <div class="flex justify-between items-center mb-6">
-                    <h2 class="text-2xl font-bold text-white">📝 Kegiatan Terbaru</h2>
+                    <h2 class="text-2xl font-bold text-black">📝 Kegiatan Terbaru</h2>
                     <div class="flex items-center space-x-3">
                         <button id="bulkDeleteBtn" class="delete-btn" style="display:none;">Hapus Terpilih</button>
                         <button onclick="openAddActivityModal()" class="glow-button">
@@ -103,7 +111,7 @@
                     </div>
                 </div>
                 <div id="logList" class="space-y-4">
-                    <div class="empty-state text-center text-white py-12 rounded-2xl" id="emptyState">
+                    <div class="empty-state text-center text-black py-12 rounded-2xl" id="emptyState">
                         <div class="text-6xl mb-4">🌟</div>
                         <p class="text-lg font-semibold mb-2">Siap untuk mulai mencatat?</p>
                         <p class="text-white/70">Tambahkan kegiatan pertama Anda dan lihat progress berkembang!</p>

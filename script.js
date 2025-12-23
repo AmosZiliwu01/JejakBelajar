@@ -1,3 +1,42 @@
+// --- LOGIKA STREAK ANTI-OVERWRITE (TARUH DI BARIS 1) ---
+(function() {
+    function hitungDanTampilkanStreak() {
+        const today = new Date().toDateString();
+        // Ambil data dari penyimpanan berbeda (isolated)
+        let data = JSON.parse(localStorage.getItem('final_streak_system'));
+        
+        if (!data) {
+            data = { count: 1, lastDate: today };
+        } else {
+            if (data.lastDate !== today) {
+                const kemarin = new Date();
+                kemarin.setDate(kemarin.getDate() - 1);
+                
+                if (data.lastDate === kemarin.toDateString()) {
+                    data.count += 1; // Tambah jika buka tiap hari
+                } else {
+                    data.count = 1; // Reset jika bolos
+                }
+                data.lastDate = today;
+            }
+        }
+        
+        localStorage.setItem('final_streak_system', JSON.stringify(data));
+
+        // Update ke HTML
+        const el = document.getElementById('streakFinal');
+        if (el) {
+            el.textContent = data.count;
+        }
+    }
+
+    // Jalankan sekarang
+    hitungDanTampilkanStreak();
+    
+    // Jalankan ulang setiap 2 detik untuk memastikan tidak ditimpa jadi 0 oleh fungsi lain
+    setInterval(hitungDanTampilkanStreak, 2000);
+})();
+
 // Enhanced InternTrack JavaScript Application
 class EnhancedInternTrack {
     constructor() {
